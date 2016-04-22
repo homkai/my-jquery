@@ -9,7 +9,7 @@ export default class Element {
     constructor(doms) {
         this.elements = doms
         if (this.size() === 1) {
-            this.element = doms[0]
+            this.element = this.elements[0]
         }
     }
 
