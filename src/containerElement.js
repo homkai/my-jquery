@@ -8,12 +8,12 @@ export default class ContainerElement extends Element{
 
     text(text) {
         if (!text) {
-            return this.element.textContent;
+            return this.element.textContent
         }
         if (!$.isString(text)) {
-            $.error('`text` must be a string');
+            $.error('`text` must be a string')
         }
-        this.element.textContent = text;
+        this.element.textContent = text
     }
 
     html(html) {

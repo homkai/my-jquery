@@ -8,12 +8,12 @@ export default class InputElement extends Element{
 
     val(text) {
         if (!text) {
-            return this.element.value;
+            return this.element.value
         }
         if (!$.isString(text)) {
-            $.error('`text` must be a string');
+            $.error('`text` must be a string')
         }
-        this.element.value = text;
+        this.element.value = text
     }
 
     disabled(isDisabled) {

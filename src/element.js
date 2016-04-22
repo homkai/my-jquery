@@ -7,22 +7,23 @@ import Event from './event'
 export default class Element {
 
     constructor(doms) {
-        this.elements = [];
-        for (let i = 0; i < doms.length; i ++) {
-            this.elements[i] = this[i] = doms[i]
-        }
-        this.length = doms.length
-        if (this.length === 1) {
+        this.elements = doms
+        if (this.size() === 1) {
             this.element = doms[0]
         }
     }
 
     each(fn) {
-        this.elements.forEach(fn)
+        for (let i in this.elements) {
+            if (isNaN(i)) {
+                continue
+            }
+            fn(this.elements[i], i)
+        }
     }
 
     size() {
-        return this.length
+        return this.elements.length
     }
 
     addClass(cls) {
